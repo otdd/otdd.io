@@ -39,7 +39,7 @@
         <div class="section-content">
           Download the otdd release which includes installation files, and the otddctl command line utility.
           <div>
-          1. Go to the link of the otdd release page at github and download the release source code. <a href="https://github.com/otdd/release/releases">github release page</a> <br>Or you can download it directly using following commands:
+          1. Go to the link of the otdd release page at github and download the release source code. <a href="https://github.com/otdd/release/releases" target="_blank">github release page</a> <br>Or you can download it directly using following commands:
             <div class="section-code">
               $ OTDD_VERSION=0.1.0; wget -O release-$OTDD_VERSION.tar.gz https://github.com/otdd/release/archive/$OTDD_VERSION.tar.gz && tar -xzf release-$OTDD_VERSION.tar.gz && rm -f release-$OTDD_VERSION.tar.gz && mv release-$OTDD_VERSION otdd-$OTDD_VERSION
             </div>
@@ -182,11 +182,11 @@
         </div>
         <div>
           <div style="font-size:16px;font-weight:bold;margin:20px 0px 10px 0px;">&nbsp;&nbsp;Understanding what happened.</div>
-          <div style="padding:10px;">
-            When the test runner docker starts, it sets the iptables rules that will <span style="font-weight:bold;">intercept all outbound connections</span> back to the test runner. <br>
-            The test runner docker then fetches test cases constantly from the otdd server. <br>
-            When a test is fetched, the <span style="font-weight:bold;">inbound request is sent by the test runner</span> directly to your development docker.<br>
-            As the development docker <span style="font-weight:bold;">share its network with the test runner container</span>, all of its outbound requests will be redirected to the test runner, the test runner then <span style="font-weight:bold;">fetches the corresponding response based on the online test</span> from the otdd server and sent it back to the development docker, thus <span style="font-weight:bold;">making the development docker effectively run as if it's in the online environment</span>.
+          <div style="margin:10px;padding:10px;border: 1px solid #ccc">
+            1. When the test runner docker starts, it sets the iptables rules that will <span style="font-weight:bold;">intercept all outbound connections</span> back to the test runner. <br>
+            2. The test runner docker then fetches test cases constantly from the otdd server. <br>
+            3. When a test is fetched, the <span style="font-weight:bold;">inbound request is sent by the test runner</span> directly to the development docker.<br>
+            4. As the development docker <span style="font-weight:bold;">share its network with the test runner container</span>, all of its outbound requests will be redirected to the test runner, the test runner then <span style="font-weight:bold;">fetches the corresponding response based on the online test</span> from the otdd server and sent it back to the development docker, thus <span style="font-weight:bold;">making the development docker effectively run as if it's in the online environment</span>.
           </div>
         </div>
         <div style="font-size:16px;font-weight:bold;margin:20px 0px 20px 0px;">

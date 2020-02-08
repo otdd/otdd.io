@@ -5,7 +5,11 @@
       <div style="margin:60px auto 0px auto; padding:0px 0px 100px 0px; width:1000px;text-align:left;font-size:16px">
         <div style="font-size:24px;font-weight:bold;margin-bottom:20px">Get Started</div>
         <div class="section-content">
-          To get started with otdd, just follow these three steps:<br>1. Set up your platform<br>2. Download the release<br>3. Install Otdd
+          To get started with otdd, just follow these three steps:<br>1. Set up your platform<br>
+          2. Download the release<br>
+          3. Install Otdd<br>
+          4. Apply Otdd To Existing Deployments<br>
+          5. Use It For Development And Testing<br>
         </div>
         <div class="section-title">
           Set up your platform
@@ -70,7 +74,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;3. <span style="font-weight:bold">otdd-server</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The otdd web and the grpc server for test runner.<br>
         </div>
         <div class="section-title">
-          Applying Otdd
+          Apply Otdd To Existing Deployments
         </div>
         <div class="section-content">
           1. Apply otdd to a target deployment. <br>&nbsp;&nbsp;&nbsp;&nbsp;Assume you have installed the official istio bookinfo sample, and you want to use otdd to help the development and testing of reviews-v2 app. (We choose reviews-v2 because it has the outbound dependency of ratings-v1 app)
@@ -86,10 +90,32 @@
         </div>
         <div class="section-content">
           3. Open your browser to visit the web front of otddserver.<br>
-          you should see a module named reviews-v2.default is created automatically and the tests are recorded already.
+          &nbsp;&nbsp;&nbsp;&nbsp;You should see a module named reviews-v2.default is created automatically and the tests are recorded already.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight:bold;">Please note</span>: The otdd-server is exposed as a kubernetes service of LoadBalancer type, exporting 8080 for the web and 8764 for the grpc ( used for the test runner running at your development node to fetch test case and receive test reports ), please refer to your cloud provider on how to configure the loadbalancer to access it from outside.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;If you are using a minikube, you can run the following commands to see which port is mapped to locally.
+          <div class="section-code">
+            $ kubectl get svc -n otdd-system
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;For example, you may see the result is:
+          <div class="section-code">
+            $ otdd-server    LoadBalancer   10.96.26.60      &lt;pending&gt;    8764:<span style="color:#4EA06B">31427</span>/TCP,8080:<span style="color:#4EA06B">31478</span>/TCP   16m
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;Then find your minikube's ip:
+          <div class="section-code">
+            $ minikube status
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;You may see the result is:
+          <div class="section-code">
+            $ kubectl: Correctly Configured: pointing to minikube-vm at 172.16.75.130
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;Then you can visit the otdd web using a browser at: http://172.16.75.130:31478<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The otdd grpc server is at: http://172.16.75.130:31427 (will be used in following section.)
         </div>
         <div class="section-title">
-          Using Otdd For Development And Testing
+          Use It For Development And Testing
+        </div>
+        <div class="section-content">
+          Now all are setup, let's use the otdd for our development and testing!
         </div>
       </div>
     </div>

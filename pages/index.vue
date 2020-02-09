@@ -38,7 +38,7 @@
       </div>
       <div style="clear:both" />
       <div class="links">
-        <Button v-on:click="getStarted()" type="primary" target="_blank" style="margin-right:10p;">
+        <Button to="/getstarted" type="primary" target="_blank" style="margin-right:10p;">
           Get Started
         </Button>
         <!--
@@ -61,11 +61,6 @@ import Footer from '~/components/Footer.vue'
 export default {
   components: {
     Header, Footer
-  },
-  methods: {
-    getStarted () {
-      window.open('getstarted/')
-    }
   }
 }
 </script>

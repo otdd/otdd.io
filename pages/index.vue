@@ -41,10 +41,12 @@
         <Button v-on:click="getStarted()" type="primary" target="_blank" style="margin-right:10p;">
           Get Started
         </Button>
+        <!--
         <Button target="_blank" style="margin-right:10px" to="https://github.com/nuxt/nuxt.js">
           Documentation
         </Button>
-        <Button target="_blank" style="margin-right:10px" to="https://www.iviewui.com/">
+        -->
+        <Button target="_blank" style="margin-right:10px" to="https://github.com/otdd">
           Github
         </Button>
       </div>

@@ -2,8 +2,10 @@
   <div style="width:100%; background-color:#458CE9">
     <img width=216 height=64 src="~/assets/logo.png" style="float: left; margin-left: 0px;">
     <div class="header-item" style="margin-right:100px"></div>
+    <!--
     <div class="header-item">Documentation</div>
-    <div class="header-item">Get Started</div>
+    -->
+    <div class="header-item"><nuxt-link to="/getstarted" style="color:#F7F7F7;">Get Started</nuxt-link></div>
     <div style="clear:both"></div>
   </div>
 </template>
@@ -27,4 +29,9 @@
   font-size:16px;
   line-height:64px;
 }
+
+.header-item a:hover{
+  color:black;
+}
+
 </style>

@@ -6,6 +6,7 @@
     <div class="header-item">Documentation</div>
     -->
     <div class="header-item"><nuxt-link to="/getstarted" style="color:#F7F7F7;">Get Started</nuxt-link></div>
+    <div class="header-item"><nuxt-link to="/whyotdd" style="color:#F7F7F7;">Why Otdd</nuxt-link></div>
     <div style="clear:both"></div>
   </div>
 </template>

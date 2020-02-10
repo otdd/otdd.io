@@ -8,11 +8,11 @@
           <div style="margin:10px 0px; font-weight:bold;">Development and Testing for microservices have three main troubles:</div>
           <div>
             1. Hard to setup the outbound dependencies<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Many third-party dependent services must be setup or mocked, not to mention they can be be in inconsistent state very likely.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Many third-party dependent services must be setup or mocked, not to mention they can be in inconsistent state very likely.<br>
           </div>
           <div style="margin-top:10px;">
             2. Hard to construct complicate test cases<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;A complicate test case may involve construct the proper inbound request and more importantly the proper outbound responses.
+            &nbsp;&nbsp;&nbsp;&nbsp;A complicate test case may involve construct the proper inbound request and more importantly many more the proper complicate outbound responses.
           </div>
           <div style="margin-top:10px;">
             3. Hard to maintain the test cases<br>
@@ -38,7 +38,7 @@
               2. Test cases are automatically recorded by otdd rathar than written manually<br>
             </div>
             <div style="padding:10px;">
-              A test case contains the inbound request/response and its <span style="font-weight:bold;">corresponding</span> outbound requests/responses. No need to write them manually, the are recorded automatically by otdd.
+              A test case contains the inbound request/response and its <span style="font-weight:bold;">corresponding</span> outbound requests/responses. No need to write them manually, they are recorded automatically by otdd.
               <div style="font-weight:bold;">
                 So no matter how complicate a test case can be, it is recorded automcatically.
               </div>
@@ -51,7 +51,7 @@
             <div style="padding:10px;">
               Test cases are recorded constantly at the rate of one test case within one second approximately. <br>When the new features of microservices are online, the test cases of these new features will be recorded automcatically, making the whole test base envolve with the online code itself.
               <div style="font-weight:bold;">
-                So it's not that nessassary to carefully maintain the test case base.
+                So it's not that nessassary to carefully maintain the test case base any more.
               </div>
             </div>
           </div>

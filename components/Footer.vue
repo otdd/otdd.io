@@ -1,6 +1,6 @@
 <template>
   <div id="footer" class="stiky-bottom">
-        otdd. online test driven development.
+        otdd. online test driven development. contact me at dev@otdd.io or follow me at twitter at dev@otdd.io
   </div>
 </template>
 <style>

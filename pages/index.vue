@@ -38,14 +38,12 @@
       </div>
       <div style="clear:both" />
       <div class="links">
+        <Button to="/whyotdd" type="primary" target="_blank" style="margin-right:10p;">
+          Why Otdd
+        </Button>
         <Button to="/getstarted" type="primary" target="_blank" style="margin-right:10p;">
           Get Started
         </Button>
-        <!--
-        <Button target="_blank" style="margin-right:10px" to="https://github.com/nuxt/nuxt.js">
-          Documentation
-        </Button>
-        -->
         <Button target="_blank" style="margin-right:10px" to="https://github.com/otdd">
           Github
         </Button>

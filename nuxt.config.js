@@ -36,7 +36,10 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-158184535-1'
+    }]
   ],
   /*
   ** Nuxt.js modules
@@ -61,10 +64,4 @@ export default {
     extend (config, ctx) {
     }
   }
-}
-
-module.exports = {
-  plugins: [
-    { src: '~plugins/ga.js', mode: 'client' }
-  ]
 }

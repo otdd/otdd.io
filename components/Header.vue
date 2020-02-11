@@ -1,6 +1,6 @@
 <template>
   <div style="width:100%; background-color:#458CE9">
-    <img width=216 height=64 src="~/assets/logo.png" style="float: left; margin-left: 0px;">
+    <img width=200 height=80 src="~/assets/logo.png" style="float: left; margin-left: 0px;">
     <div class="header-item" style="margin-right:100px"></div>
     <!--
     <div class="header-item">Documentation</div>
@@ -28,7 +28,7 @@
   margin-right:20px;
   color:white;
   font-size:16px;
-  line-height:64px;
+  line-height:80px;
 }
 
 .header-item a:hover{

@@ -2,13 +2,29 @@
   <div class="container">
     <Header />
     <div>
-      <div style="margin:120px auto 0px auto; width:1260px;">
+      <div style="margin-top:20px;">
+        <div style="margin-left:140px;width:620px;text-align:left;float:left;">
+          <div style="font-size:18px;font-weight:bold;">OTDD is an open-source system to record traffic online and replay them in dev or test environment.</div>
+          <div style="font-size:16px;margin-top:10px;">
+            Pacifically it manages to group the inbound request/responses with its corresponding outbound requests/responses thus making it extremely useful as to:
+          </div>
+          <div style="margin-top:10px;font-size:16px;">
+            1. examine the online cases<br>
+            2. fasten the development by mocking all its dependencies<br>
+            3. test the dev code using the real online cases<br>
+          </div>
+        </div>
+        <img width=400 height=160 src="~/assets/logo_transparent.png" style="float: left; margin: 20px 40px;">
+        <div style="clear:both;"></div>
+      </div>
+      <div style="margin:40px auto 0px auto; width:1260px;">
         <div class="card">
           <div class="card-title">
             For Fast Development And Testing
           </div>
           <div class="card-content">
-            Otdd is born for <span class="weight-content">fast development and testing</span> for microservices. <br><span class="weight-content">All inbound/outbound traffics are recorded</span> by otdd, <span class="weight-content">no need to</span> use a postman, curl or browser to construct the complex inbound request and <span class="weight-content">no need to</span> use some mock servers to mock the outbound dependencies any more.
+            Otdd is born for <span class="weight-content">fast development and testing</span> for microservices. <br>
+            <span class="weight-content">no need to</span> use a postman, curl or browser to construct the complex inbound request and <span class="weight-content">no need to</span> use some mock servers to mock the outbound dependencies any more.
           </div>
         </div>
         <div class="card">
@@ -44,7 +60,7 @@
         <Button to="/getstarted" type="primary" target="_blank" style="margin-right:10p;">
           Get Started
         </Button>
-        <Button target="_blank" style="margin-right:10px" to="https://github.com/otdd">
+        <Button target="_blank" type="primary" style="margin-right:10px" to="https://github.com/otdd">
           Github
         </Button>
       </div>
@@ -98,6 +114,6 @@ export default {
 }
 
 .links {
-  padding-top: 40px;
+  margin-top: 20px;
 }
 </style>

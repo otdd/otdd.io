@@ -13,6 +13,9 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+     {src: 'https://hm.baidu.com/hm.js?49b6163b1d2149c10436772e4fe70fc1'},
     ]
   },
   /*
@@ -29,7 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/iview'
+    '@/plugins/iview','@/plugins/baiduGa.js'
   ],
   /*
   ** Nuxt.js dev-modules

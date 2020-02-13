@@ -90,7 +90,7 @@
           <div class="section-code">
             # option -t is for target deployment. -p is for target deployment's container port. <br>
             # please run "otddctl.sh help" to see more options.<br>
-            $ ISTIO_VERSION="1.2.2"; sh otddctl.sh -v $ISTIO_VERSION -t reviews-v2 -p 9080
+            $ ISTIO_VERSION="1.2.2"; sh otddctl.sh apply -v $ISTIO_VERSION -t reviews-v2 -p 9080
           </div>
           &nbsp;&nbsp;&nbsp;&nbsp;Please make sure the ISTIO_VERSION is correct. otdd will install the redirector/recorder, and will substitute istio/proxyv2 to the same version of otdd compiled otdd/proxyv2 for them, if you specified the wrong version, the otdd/proxyv2 may not fit into your existing istio system.
         </div>
@@ -111,11 +111,11 @@
           </div>
           &nbsp;&nbsp;&nbsp;&nbsp;Then find your minikube's ip:
           <div class="section-code">
-            $ minikube status
+            $ minikube ip
           </div>
           &nbsp;&nbsp;&nbsp;&nbsp;You may see the result is:
           <div class="section-code">
-            $ kubectl: Correctly Configured: pointing to minikube-vm at 172.16.75.130
+            $ 172.16.75.130
           </div>
           &nbsp;&nbsp;&nbsp;&nbsp;Then you can visit the otdd web using a browser at: http://172.16.75.130:31478<br>
           &nbsp;&nbsp;&nbsp;&nbsp;The otdd grpc server is at: http://172.16.75.130:31427 (will be used in following section.)

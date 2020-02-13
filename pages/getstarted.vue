@@ -30,7 +30,7 @@
             <tr>
               <td>0.1.0</td>
               <td>1.2.2</td>
-              <td>1.3</td>
+              <td>1.15</td>
             </tr>
           </tbody>
         </table>
@@ -61,7 +61,14 @@
           <div class="section-code">
             $ cd otdd-0.1.0/install
           </div>
-          2. Run the install script.
+          2. Run the install script. Before install, please make sure the <a href="https://stedolan.github.io/jq/download/" target="_blank">jq</a> command line is installed. For reference, you can install it in centos 7 as follows:
+          <div class="section-code">
+            yum install epel-release -y<br>
+            yum install jq -y
+          </div>
+          <div>
+            Then execute the install.sh script.
+          </div>
           <div class="section-code">
             $ sh install.sh
           </div>

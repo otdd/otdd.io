@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <div>
-      <div style="margin-top:20px;">
+      <div style="margin-top:40px;">
         <div style="margin-left:140px;width:620px;text-align:left;float:left;">
           <div style="font-size:18px;font-weight:bold;">OTDD is an open-source system to record traffic online and replay them in dev or test environment.</div>
           <div style="font-size:16px;margin-top:10px;">
@@ -17,7 +17,7 @@
         <img width=400 height=160 src="~/assets/logo_transparent.png" style="float: left; margin: 20px 40px;">
         <div style="clear:both;"></div>
       </div>
-      <div style="margin:40px auto 0px auto; width:1260px;">
+      <div style="margin:30px auto 0px auto; width:1260px;">
         <div class="card">
           <div class="card-title">
             For Fast Development And Testing
@@ -32,7 +32,7 @@
             Easy To Use
           </div>
           <div class="card-content">
-            Tests are <span class="weight-content">recorded online automatically</span> rather than written manually. You don't need to do anything just enjoy using them.
+            Tests are <span class="weight-content">recorded online automatically</span> rather than written manually. No need to do anything just enjoy using them.
           </div>
         </div>
         <div class="card">
@@ -114,6 +114,6 @@ export default {
 }
 
 .links {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 </style>

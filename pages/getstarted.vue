@@ -61,14 +61,7 @@
           <div class="section-code">
             $ cd otdd-0.1.0/install
           </div>
-          2. Run the install script. Before install, please make sure the <a href="https://stedolan.github.io/jq/download/" target="_blank">jq</a> command line is installed. For reference, you can install it in centos 7 as follows:
-          <div class="section-code">
-            yum install epel-release -y<br>
-            yum install jq -y
-          </div>
-          <div>
-            Then execute the install.sh script.
-          </div>
+          2. Run the install script.
           <div class="section-code">
             $ sh install.sh
           </div>
@@ -85,13 +78,21 @@
           Apply Otdd To Existing Deployments
         </div>
         <div class="section-content">
-          1. Apply otdd to a target deployment. <br>&nbsp;&nbsp;&nbsp;&nbsp;Assume you have installed the official istio bookinfo sample, and you want to use otdd to help the development and testing of reviews-v2 app. (We choose reviews-v2 because it has the outbound dependency of ratings-v1 app)
+          1. Apply otdd to a target deployment. <br>&nbsp;&nbsp;&nbsp;&nbsp;Assume you have installed the official istio bookinfo sample, and you want to use otdd to help the development and testing of reviews-v2 app. (We choose reviews-v2 because it has the outbound dependency of ratings-v1 app)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Before execute otddctl.sh, please make sure the <a href="https://stedolan.github.io/jq/download/" target="_blank">jq</a> command is installed. For reference, you can install it in centos 7 as follows:
+          <div class="section-code">
+            yum install epel-release -y<br>
+            yum install jq -y
+          </div>
+          <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;Then execute the otddctl.sh script.
+          </div>
           <div class="section-code">
             # option -t is for target deployment. -p is for target deployment's container port. <br>
             # please run "otddctl.sh help" to see more options.<br>
             $ ISTIO_VERSION="1.2.2"; sh otddctl.sh -v $ISTIO_VERSION -t reviews-v2 -p 9080
           </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;Please make sure the ISTIO_VERSION is correct. otdd will install the redirector/recorder, and will substitute istio/proxyv2 to otdd compiled otdd/proxyv2 for them, if you specified the wrong version, the otdd/proxyv2 may not fit into your existing istio system.
+          &nbsp;&nbsp;&nbsp;&nbsp;Please make sure the ISTIO_VERSION is correct. otdd will install the redirector/recorder, and will substitute istio/proxyv2 to the same version of otdd compiled otdd/proxyv2 for them, if you specified the wrong version, the otdd/proxyv2 may not fit into your existing istio system.
         </div>
         <div class="section-content">
           2. Make some requests to the target deployment to let otdd record the test.<br> &nbsp;&nbsp;&nbsp;&nbsp; Let's take the bookinfo as an example, you can open the browser and refresh the bookinfo page several times to make some requests to reviews-v2. (As the requests are load-balanced for 3 reviews versions, v1, v2, v3, please refresh the browser better for 10+ times to make plenty of requests)

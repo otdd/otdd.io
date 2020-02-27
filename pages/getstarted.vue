@@ -216,6 +216,14 @@
                 $ su - otdd-test-runner<br>
                 $ GOPATH=~/go/; cd $GOPATH/src/otdd-test-runner; go get ./... ; go build
               </div>
+              <div>if you have problem accessing golang.org, you can clone the dependencies as follows:</div>
+              <div class="section-code">
+                $ git clone https://github.com/grpc/grpc-go.git ~/go/src/google.golang.org/grpc<br>
+                $ git clone https://github.com/golang/net.git ~/go/src/golang.org/x/net<br>
+                $ git clone https://github.com/golang/sys.git ~/go/src/golang.org/x/sys<br>
+                $ git clone https://github.com/golang/text.git ~/go/src/golang.org/x/text<br>
+                $ git clone https://github.com/google/go-genproto.git ~/go/src/google.golang.org/genproto<br>
+              </div>
               <div>4. setup the iptables rules.</div>
               <div class="section-code">
                 # iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner otdd-test-runner -j ACCEPT<br>

@@ -213,7 +213,8 @@
               </div>
               <div>3. build the test runner binary in the otdd-test-runner user. download the correct version of otdd-test-runner source code from <a href="https://github.com/otdd/otdd-test-runner/releases" target="_blank">github</a> and extract them into the /home/otdd-test-runner/go/src/otdd-test-runner directory</div>
               <div class="section-code">
-                $ GOPATH=/home/otdd-test-runner/go/; cd $GOPATH/src/otdd-test-runner; go get ./... ; go build
+                $ su - otdd-test-runner
+                $ GOPATH=~/go/; cd $GOPATH/src/otdd-test-runner; go get ./... ; go build
               </div>
               <div>4. setup the iptables rules.</div>
               <div class="section-code">

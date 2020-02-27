@@ -226,11 +226,13 @@
               </div>
               <div>4. setup the iptables rules.</div>
               <div class="section-code">
+                $ su - root<br>
                 # iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner otdd-test-runner -j ACCEPT<br>
                 # iptables -t nat -A OUTPUT -p tcp -m owner --gid-owner otdd -j REDIRECT --to-port 18746
               </div>
               <div>5. start the test runner in the otdd-test-runner user</div>
               <div class="section-code">
+                $ su - otdd-test-runner<br>
                 $ OTDD_SERVER_HOST="172.16.75.130"<br>
                 $ OTDD_SERVER_PORT="31427"<br>
                 $ USERNAME="yipjie"<br>

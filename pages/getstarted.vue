@@ -141,7 +141,7 @@
                   OTDD_SERVER_HOST :
                 </td>
                 <td>
-                  the otdd server's port. In the minikube example above, it's 172.16.75.130;
+                  the otdd server's host. In the minikube example above, it's 172.16.75.130.
                 </td>
               </tr>
               <tr>
@@ -149,7 +149,7 @@
                   OTDD_SERVER_PORT :
                 </td>
                 <td>
-                  the otdd server's port. In the minikube example above, it's 31427;
+                  the otdd server's port. It's 8764 normally, but in the minikube example above, it's mapped to 31427.
                 </td>
               </tr>
               <tr>
@@ -300,7 +300,7 @@
           </div>
           <img width=1000 src="~/assets/otdd_web_edit_test.png" style="margin:10px;">
           <div style="font-weight:bold;">
-            There is much more powerfully and intresting feature of otdd, please feel free to enjoy it!
+            There are many more powerfull and intresting features of otdd, please feel free to enjoy it!
           </div>
         </div>
       </div>

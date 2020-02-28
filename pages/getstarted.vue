@@ -132,7 +132,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;If your development code is run on a docker, e.g. a php/ruby/nginx docker image, then firstly run the otdd test runner docker as follows.
           </div>
           <div class="section-code">
-            $ OTDD_VERSION=0.1.0; docker run --cap-add=NET_ADMIN --cap-add=NET_RAW -e OTDD_SERVER_HOST='<span style="color:#4EA06B">172.16.75.130</span>' -e OTDD_SERVER_PORT='<span style="color:#4EA06B">31427</span>' -e USERNAME='<span style="color:#4EA06B">yipjie</span>' -e TAG='<span style="color:#4EA06B">reviews-v2</span>' -d <span style="color:#4EA06B">-p 9080:9080</span> --name otdd-test-runner otdd-test-runner:$OTDD_VERSION<br>
+            $ OTDD_VERSION=0.1.0; docker run --cap-add=NET_ADMIN --cap-add=NET_RAW -e OTDD_SERVER_HOST='<span style="color:#4EA06B">172.16.75.130</span>' -e OTDD_SERVER_PORT='<span style="color:#4EA06B">31427</span>' -e USERNAME='<span style="color:#4EA06B">yipjie</span>' -e TAG='<span style="color:#4EA06B">reviews-v2</span>' -d <span style="color:#4EA06B">-p 9080:9080</span> --name otdd-test-runner otdd/otdd-test-runner:$OTDD_VERSION<br>
           </div>
           <div class="code-explain">
             <table class="test-runner-exp">

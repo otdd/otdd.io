@@ -226,9 +226,15 @@
               </div>
               <div>4. setup the iptables rules.</div>
               <div class="section-code">
-                $ su - root<br>
-                # iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner otdd-test-runner -j ACCEPT<br>
-                # iptables -t nat -A OUTPUT -p tcp -m owner --gid-owner otdd -j REDIRECT --to-port 18746
+                $ sudo iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner otdd-test-runner -j ACCEPT<br>
+                $ sudo iptables -t nat -A OUTPUT -p tcp -m owner --gid-owner otdd -j REDIRECT --to-port 18746
+              </div>
+              <div style="padding-left:10px">save the iptables rules in case of restarting. for centos 7:</div>
+              <div class="section-code">
+                $ sudo systemctl disable firewalld<br>
+                $ sudo yum install -y iptables-services<br>
+                $ sudo systemctl enable iptables<br>
+                $ sudo service iptables save
               </div>
               <div>5. start the test runner in the otdd-test-runner user</div>
               <div class="section-code">
@@ -240,7 +246,12 @@
                 $ cd $GOPATH/src/otdd-test-runner<br>
                 $ nohup ./otdd-test-runner -h $OTDD_SERVER_HOST -p $OTDD_SERVER_PORT -u $USERNAME -t $TAG &
               </div>
-              <div>6. start your development code normally but in the otdd group. take reviews app as an example, the command to start the reviews app is './server run reviews', then please start it as follows</div>
+              <div>6. start your development code normally but in the otdd group. </div>
+              <div style="padding-left:10px;">firstly add your user to the otdd group, if the development code is run in user 'work', then</div>
+              <div class="section-code">
+                $ sudo usermod -a -G otdd work
+              </div>
+              <div style="padding-left:10px;">take reviews app as an example, the command to start the reviews app is './server run reviews', start it as follows</div>
               <div class="section-code">
                 $ sg otdd './server run reviews'
               </div>

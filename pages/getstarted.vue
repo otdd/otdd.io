@@ -214,7 +214,7 @@
               <div>3. build the test runner binary in the otdd-test-runner user. download the correct version of otdd-test-runner source code from <a href="https://github.com/otdd/otdd-test-runner/releases" target="_blank">github</a> and extract them into the /home/otdd-test-runner/go/src/otdd-test-runner directory</div>
               <div class="section-code">
                 $ su - otdd-test-runner<br>
-                $ GOPATH=~/go/; cd $GOPATH/src/otdd-test-runner; go get ./... ; go build
+                $ GOPATH=~/go/; cd $GOPATH/src/otdd-test-runner; go get ./... ; go build ; go install
               </div>
               <div>if you have problem accessing golang.org, you can clone the dependencies as follows:</div>
               <div class="section-code">
@@ -243,7 +243,7 @@
                 $ OTDD_SERVER_PORT="31427"<br>
                 $ USERNAME="yipjie"<br>
                 $ TAG="reviews-v2"<br>
-                $ cd $GOPATH/src/otdd-test-runner<br>
+                $ cd $GOPATH/bin/<br>
                 $ nohup ./otdd-test-runner -h $OTDD_SERVER_HOST -p $OTDD_SERVER_PORT -u $USERNAME -t $TAG &
               </div>
               <div>6. start your development code normally but in the otdd group. </div>

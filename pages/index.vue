@@ -2,8 +2,8 @@
   <div class="container">
     <Header />
     <div>
-      <div style="margin-top:40px;">
-        <div style="margin-left:140px;width:620px;text-align:left;float:left;">
+      <div style="width:1240px;margin:auto;margin-top:40px;">
+        <div style="width:620px;text-align:left;float:left;">
           <div style="font-size:18px;font-weight:bold;">OTDD is an open-source system to record traffic online and replay them in dev or test environment.</div>
           <div style="font-size:16px;margin-top:10px;">
             Pacifically it manages to group the inbound request/responses with its corresponding outbound requests/responses thus making it extremely useful as to:
@@ -14,7 +14,7 @@
             3. test the dev code using the real online cases<br>
           </div>
         </div>
-        <img width=400 height=160 src="~/assets/logo_transparent.png" style="float: left; margin: 20px 40px;">
+        <img width=400 height=160 src="~/assets/logo_transparent.png" style="float: right; margin: 20px 40px;">
         <div style="clear:both;"></div>
       </div>
       <div style="margin:30px auto 0px auto; width:1260px;">

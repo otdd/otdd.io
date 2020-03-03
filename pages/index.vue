@@ -6,7 +6,7 @@
         <div style="width:620px;text-align:left;float:left;">
           <div style="font-size:18px;font-weight:bold;">OTDD is an open-source system to record traffic online and replay them in dev or test environment.</div>
           <div style="font-size:16px;margin-top:10px;">
-            Pacifically it manages to group the inbound request/responses with its corresponding outbound requests/responses thus making it extremely useful as to:
+            Specifically it manages to group the inbound request/responses with its corresponding outbound requests/responses thus making it extremely useful as to:
           </div>
           <div style="margin-top:10px;font-size:16px;">
             1. examine the online cases<br>

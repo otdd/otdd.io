@@ -2,6 +2,10 @@
 
 > otdd official site
 
+
+Please refer to [otdd.io](https://otdd.io/) to see what it looks like.
+
+
 ## Build Setup
 
 ``` bash

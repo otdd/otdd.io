@@ -9,7 +9,7 @@ Please refer to [otdd.io](https://otdd.io/) to see what it looks like.
 
 ``` bash
 # install dependencies
-$ npm run install
+$ npm install
 
 # serve with hot reload at localhost:3000
 $ npm run dev

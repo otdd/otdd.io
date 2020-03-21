@@ -5,56 +5,40 @@
       <div style="margin:60px auto 0px auto; padding:0px 0px 200px 0px; width:1000px;text-align:left;font-size:16px">
         <div style="font-size:24px;font-weight:bold;margin-bottom:20px">Get Started</div>
         <div class="section-content">
-          To get started with otdd, just follow these six steps:<br>1. Set up your platform<br>
+          To get started with OTDD, just follow these six steps:<br>1. Set up your platform<br>
           2. Download the release<br>
-          3. Install Otdd<br>
-          4. Apply Otdd To Existing Deployments<br>
-          5. Setup The Otdd Test Runner For Development And Testing<br>
-          6. Use The Otdd Web To Choose Tests To Run<br>
+          3. Install OTDD<br>
+          4. Apply OTDD To Existing Deployments<br>
+          5. Setup The OTDD Test Runner For Development And Testing<br>
+          6. Use The OTDD Web To Choose Tests To Run<br>
         </div>
         <div class="section-title">
           Set up your platform
         </div>
         <div class="section-content">
-        Before you can install otdd, you need a cluster running a compatible version of <a href="https://kubernetes.io/" target="_blank">Kubernetes</a> and <a href="https://istio.io/docs/setup/getting-started/" target="_blank">Istio</a>. And make sure the istio is setup in auto injection mode. i.e. your namespace is labeled: <span style="font-weight:bold">istio-injection=enabled</span><br>Please refer to the table below to choose the versions to install.
+        Before you can install OTDD, you need a cluster running a compatible version of <a href="https://kubernetes.io/" target="_blank">Kubernetes</a> and <a href="https://istio.io/docs/setup/getting-started/" target="_blank">Istio</a>. And make sure the istio is setup in auto injection mode. i.e. your namespace is labeled: <span style="font-weight:bold">istio-injection=enabled</span><br> OTDD support all official istio versions except 1.0.x and 0.x, which includes 1.1.x, 1.2.x, 1.3.x, 1.4.x and 1.5.x.
         </div>
-        <table class="section-table">
-          <thead>
-            <tr>
-              <td>otdd version</td>
-              <td>istio version</td>
-              <td>kubernetes version</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0.1.0</td>
-              <td>1.2.2</td>
-              <td>1.15</td>
-            </tr>
-          </tbody>
-        </table>
         <div class="section-title">
           Download the release
         </div>
         <div class="section-content">
-          Download the otdd release which includes installation files, and the otddctl command line utility.
+          Download the OTDD release which includes installation files, and the otddctl command line utility.
           <div>
-          1. Go to the link of the otdd release page at github and download the release source code. <a href="https://github.com/otdd/release/releases" target="_blank">github release page</a> <br>Or you can download it directly using following commands:
+          1. Go to the link of the OTDD release page at github and download the release source code. <a href="https://github.com/otdd/release/releases" target="_blank">github release page</a> <br>Or you can download it directly using following commands:
             <div class="section-code">
-              $ OTDD_VERSION=0.1.0; wget -O release-$OTDD_VERSION.tar.gz https://github.com/otdd/release/archive/$OTDD_VERSION.tar.gz && tar -xzf release-$OTDD_VERSION.tar.gz && rm -f release-$OTDD_VERSION.tar.gz && mv release-$OTDD_VERSION otdd-$OTDD_VERSION
+              $ OTDD_VERSION=0.1.0; wget -O release-$OTDD_VERSION.tar.gz https://github.com/otdd/release/archive/$OTDD_VERSION.tar.gz
             </div>
           </div>
           <div>
-          2. Move to the otdd package directory. For example, if the package is otdd-0.1.0:
+          2. Uncompress it and move to the OTDD package directory. For example, if the package is otdd-0.1.0:
             <div class="section-code">
               $ cd otdd-0.1.0
             </div>
-          The directory contains:<br> &nbsp;&nbsp;&nbsp;&nbsp;1. The install directory: cotains install.sh/uninstall.sh to install/uninstall YAML files for Kubernetes<br>&nbsp;&nbsp;&nbsp;&nbsp;2.  The otddctl.sh command line tool. <br>&nbsp;&nbsp;&nbsp;&nbsp;3.  The template directory: contains a template file for otddctl.sh to use.
+          The directory contains:<br> &nbsp;&nbsp;&nbsp;&nbsp;1. The install directory: cotains install.sh/uninstall.sh to install/uninstall YAML files for Kubernetes<br>&nbsp;&nbsp;&nbsp;&nbsp;2.  The otddctl.sh command line tool. <br>&nbsp;&nbsp;&nbsp;&nbsp;3.  The template directory: contains a template file for otddctl.sh to use.<br> &nbsp;&nbsp;&nbsp;&nbsp;4. The example directory: contains an example project like istio bookinfo project.
           </div>
         </div>
         <div class="section-title">
-          Install Otdd
+          Install OTDD
         </div>
         <div class="section-content">
           1. Go to the install directory.
@@ -65,20 +49,20 @@
           <div class="section-code">
             $ sh install.sh
           </div>
-          3. Check whether otdd is successfully installed.
+          3. Check whether OTDD is successfully installed.
           <div class="section-code">
             $ kubectl -n otdd-system get pods
           </div>
           You should see three pods running:<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;1. <span style="font-weight:bold">otdd-adapter</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For handling istio mixer events. The recorded test cases are sent through mixer.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;1. <span style="font-weight:bold">otdd-adapter (please note, if the istio version is above or equal 1.5.x, no otdd-adapter is installed as istio changed the design from mixer to wasm)</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For handling istio mixer events. The recorded test cases are sent through mixer.<br>
           &nbsp;&nbsp;&nbsp;&nbsp;2. <span style="font-weight:bold">otdd-controller</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For redirector/recorder creation.<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;3. <span style="font-weight:bold">otdd-server</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The otdd web and the grpc server for test runner.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;3. <span style="font-weight:bold">otdd-server</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The OTDD web and the grpc server for test runner.<br>
         </div>
         <div class="section-title">
-          Apply Otdd To Existing Deployments
+          Apply OTDD To Existing Deployments
         </div>
         <div class="section-content">
-          1. Apply otdd to a target deployment. <br>&nbsp;&nbsp;&nbsp;&nbsp;Assume you have installed the official istio bookinfo sample, and you want to use otdd to help the development and testing of reviews-v2 app. (We choose reviews-v2 because it has the outbound dependency of ratings-v1 app)<br>
+          1. Apply OTDD to a target deployment. <br>&nbsp;&nbsp;&nbsp;&nbsp;Assume you have installed the official istio bookinfo sample, and you want to use OTDD to help the development and testing of reviews-v2 app. (We choose reviews-v2 because it has the outbound dependency of ratings-v1 app)<br>
           &nbsp;&nbsp;&nbsp;&nbsp;Before execute otddctl.sh, please make sure the <a href="https://stedolan.github.io/jq/download/" target="_blank">jq</a> command is installed. For reference, you can install it in centos 7 as follows:
           <div class="section-code">
             yum install epel-release -y<br>
@@ -90,12 +74,12 @@
           <div class="section-code">
             # option -t is for target deployment. -p is for target deployment's container port. <br>
             # please run "otddctl.sh help" to see more options.<br>
-            $ ISTIO_VERSION="1.2.2"; sh otddctl.sh apply -v $ISTIO_VERSION -t reviews-v2 -p 9080
+            $ sh otddctl.sh apply -t reviews-v2 -p 9080
           </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;Please make sure the ISTIO_VERSION is correct. otdd will install the redirector/recorder, and will substitute istio/proxyv2 to the same version of otdd compiled otdd/proxyv2 for them, if you specified the wrong version, the otdd/proxyv2 may not fit into your existing istio system.
+          &nbsp;&nbsp;&nbsp;&nbsp;OTDD will automatically install the redirector/recorder, and will substitute istio/proxyv2 to the same OTDD compiled version of otdd/proxyv2 for them.
         </div>
         <div class="section-content">
-          2. Make some requests to the target deployment to let otdd record the test.<br> &nbsp;&nbsp;&nbsp;&nbsp; Let's take the bookinfo as an example, you can open the browser and refresh the bookinfo page several times to make some requests to reviews-v2. (As the requests are load-balanced for 3 reviews versions, v1, v2, v3, please refresh the browser better for 10+ times to make plenty of requests)
+          2. Make some requests to the target deployment to let OTDD record the test.<br> &nbsp;&nbsp;&nbsp;&nbsp; Let's take the bookinfo as an example, you can open the browser and refresh the bookinfo page several times to make some requests to reviews-v2. (As the requests are load-balanced for 3 reviews versions, v1, v2, v3, please refresh the browser better for 10+ times to make plenty of requests)
         </div>
         <div class="section-content">
           3. Open your browser to visit the web front of otddserver.<br>
@@ -117,19 +101,19 @@
           <div class="section-code">
             $ 172.16.75.130
           </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;Then you can visit the otdd web using a browser at: http://172.16.75.130:31478<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;The otdd grpc server is at: http://172.16.75.130:31427 (will be used in following section.)
+          &nbsp;&nbsp;&nbsp;&nbsp;Then you can visit the OTDD web using a browser at: http://172.16.75.130:31478<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The OTDD grpc server is at: http://172.16.75.130:31427 (will be used in following section.)
         </div>
         <div class="section-title">
-          Setup The Otdd Test Runner For Development And Testing
+          Setup The OTDD Test Runner For Development And Testing
         </div>
         <div class="section-content">
-          <div>Now all are setup, let's setup the otdd test runner for our development and testing!</div>
+          <div>Now all are setup, let's prepare the OTDD test runner for our development and testing!</div>
           <div style="font-size:16px;font-weight:bold;margin:0px 0px 20px 0px;">
             1. If Your Development Code is Run On Docker
           </div>
           <div>
-            &nbsp;&nbsp;&nbsp;&nbsp;If your development code is run on a docker, e.g. a php/ruby/nginx docker image, then firstly run the otdd test runner docker as follows.
+            &nbsp;&nbsp;&nbsp;&nbsp;If your development code is run on a docker, e.g. a php/ruby/nginx docker image, then firstly run the OTDD test runner docker as follows.
           </div>
           <div class="section-code">
             $ OTDD_VERSION=0.1.0; docker run --cap-add=NET_ADMIN --cap-add=NET_RAW -e OTDD_SERVER_HOST='<span style="color:#4EA06B">172.16.75.130</span>' -e OTDD_SERVER_PORT='<span style="color:#4EA06B">31427</span>' -e USERNAME='<span style="color:#4EA06B">yipjie</span>' -e TAG='<span style="color:#4EA06B">reviews-v2</span>' -d <span style="color:#4EA06B">-p 9080:9080</span> --name otdd-test-runner otdd/otdd-test-runner:$OTDD_VERSION<br>
@@ -141,7 +125,7 @@
                   OTDD_SERVER_HOST :
                 </td>
                 <td>
-                  the otdd server's host. In the minikube example above, it's 172.16.75.130.
+                  the OTDD server's host. In the minikube example above, it's 172.16.75.130.
                 </td>
               </tr>
               <tr>
@@ -149,7 +133,7 @@
                   OTDD_SERVER_PORT :
                 </td>
                 <td>
-                  the otdd server's port. It's 8764 normally, but in the minikube example above, it's mapped to 31427.
+                  the OTDD server's port. It's 8764 normally, but in the minikube example above, it's mapped to 31427.
                 </td>
               </tr>
               <tr>
@@ -157,7 +141,7 @@
                   USERNAME :
                 </td>
                 <td>
-                  it's used for otdd server to distinguish from other users.
+                  it's used for OTDD server to distinguish from other users.
                 </td>
               </tr>
               <tr>
@@ -192,9 +176,9 @@
             <div style="font-size:16px;font-weight:bold;margin:32px 0px 32px 0px;">&nbsp;&nbsp;Understanding what happened.</div>
             <div style="margin:10px;padding:10px;border: 1px solid #ccc">
               1. When the test runner docker starts, it sets the iptables rules that will <span style="font-weight:bold;">intercept all outbound connections</span> back to the test runner. <br>
-              2. The test runner docker then fetches test cases constantly from the otdd server. <br>
+              2. The test runner docker then fetches test cases constantly from the OTDD server. <br>
               3. When a test is fetched, the <span style="font-weight:bold;">inbound request is sent by the test runner</span> directly to the development docker.<br>
-              4. As the development docker <span style="font-weight:bold;">share its network with the test runner container</span>, all of its outbound requests will be redirected to the test runner, the test runner then <span style="font-weight:bold;">fetches the corresponding response based on the online test</span> from the otdd server and sent it back to the development docker, thus <span style="font-weight:bold;">making the development docker effectively run as if it's in the online environment</span>.
+              4. As the development docker <span style="font-weight:bold;">share its network with the test runner container</span>, all of its outbound requests will be redirected to the test runner, the test runner then <span style="font-weight:bold;">fetches the corresponding response based on the online test</span> from the OTDD server and sent it back to the development docker, thus <span style="font-weight:bold;">making the development docker effectively mocked by the online test case.</span>.
             </div>
           </div>
           <div style="font-size:16px;font-weight:bold;margin:32px 0px 20px 0px;">
@@ -270,7 +254,7 @@
           </div>
         </div>
         <div class="section-title">
-          Use The Otdd Web To Choose Tests To Run
+          Use The OTDD Web To Choose Tests To Run
         </div>
         <div class="section-content">
           <div>After all the above are setup, the tests are recorded automatically and the the test runner is fetching the tests to run constantly. All you need to do now is to choose some tests to run!</div>
@@ -300,7 +284,7 @@
           </div>
           <img width=1000 src="~/assets/otdd_web_edit_test.png" style="margin:10px;">
           <div style="font-weight:bold;">
-            There are many more powerfull and intresting features of otdd, please feel free to enjoy it!
+            There are many more powerfull and intresting features of OTDD, please feel free to enjoy it!
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
     <Header />
     <div>
       <div style="margin:60px auto 0px auto; padding:0px 0px 200px 0px; width:1000px;text-align:left;font-size:16px">
-        <div style="font-size:24px;font-weight:bold;margin-bottom:20px">Why Otdd?</div>
+        <div style="font-size:24px;font-weight:bold;margin-bottom:20px">Why OTDD?</div>
         <div class="section-content">
           <div style="margin:10px 0px; font-weight:bold;">Development and Testing for microservices have three main troubles:</div>
           <div>
@@ -20,25 +20,25 @@
           </div>
         </div>
         <div class="section-title">
-          How Otdd Deal With These Troubles
+          How OTDD Deal With These Troubles
         </div>
         <div class="section-content">
           <div>
             1. All outbound dependencies are mocked automatically using the recorded test case
           </div>
           <div style="padding:10px;">
-            All outbound dependencies are mocked by otdd. No need to worry about the dependent services's state.<br>
-            Iptables rules are setup to redirect all outbound connections to local otdd test runner. When a test is run, the test runner then fetches corresponding outbound response based on data recorded from online.
+            All outbound dependencies are mocked by OTDD. No need to worry about the dependent services's state.<br>
+            Iptables rules are setup to redirect all outbound connections to local OTDD test runner. When a test is run, the test runner then fetches corresponding outbound response based on data recorded from online.
             <div style="font-weight:bold;">
               So the outbound dependencies can be very easy to setup or no need to setup them at all.
             </div>
           </div>
           <div style="margin-top:10px;">
             <div>
-              2. Test cases are automatically recorded by otdd rathar than written manually<br>
+              2. Test cases are automatically recorded by OTDD rathar than written manually<br>
             </div>
             <div style="padding:10px;">
-              A test case contains the inbound request/response and its <span style="font-weight:bold;">corresponding</span> outbound requests/responses. No need to write them manually, they are recorded automatically by otdd.
+              A test case contains the inbound request/response and its <span style="font-weight:bold;">corresponding</span> outbound requests/responses. No need to write them manually, they are recorded automatically by OTDD.
               <div style="font-weight:bold;">
                 So no matter how complicate a test case can be, it is recorded automcatically.
               </div>

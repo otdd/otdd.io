@@ -23,7 +23,7 @@
             For Fast Development And Testing
           </div>
           <div class="card-content">
-            Otdd is born for <span class="weight-content">fast development and testing</span> for microservices. <br>
+            OTDD is born for <span class="weight-content">fast development and testing</span> for microservices. <br>
             <span class="weight-content">no need to</span> use a postman, curl or browser to construct the complex inbound request and <span class="weight-content">no need to</span> use some mock servers to mock the outbound dependencies any more.
           </div>
         </div>
@@ -40,7 +40,7 @@
             Easy To Deploy
           </div>
           <div class="card-content">
-            Otdd runs on istio and kubernetes. It can be <span class="weight-content">installed by a few commands</span>.
+            OTDD runs on istio and kubernetes. It can be <span class="weight-content">installed by a few commands</span>.
           </div>
         </div>
         <div class="card" style="margin-right:0px">
@@ -48,14 +48,14 @@
             Based On the TDD Idea
           </div>
           <div class="card-content">
-            Otdd is based on the TDD idea applying on <span class="weight-content">microservices</span> specifically utilizing <span class="weight-content">online</span> recorded traffic.
+            OTDD is based on the TDD idea applying on <span class="weight-content">microservices</span> specifically utilizing <span class="weight-content">online</span> recorded traffic.
           </div>
         </div>
       </div>
       <div style="clear:both" />
       <div class="links">
         <Button to="/whyotdd" type="primary" target="_blank" style="margin-right:10p;">
-          Why Otdd
+          Why OTDD
         </Button>
         <Button to="/getstarted" type="primary" target="_blank" style="margin-right:10p;">
           Get Started

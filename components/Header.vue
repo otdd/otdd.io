@@ -4,7 +4,7 @@
     <div class="header-item" style="margin-right:100px"></div>
     <div class="header-item"><nuxt-link to="/releases" style="color:#F7F7F7;">Releases</nuxt-link></div>
     <div class="header-item"><nuxt-link to="/getstarted" style="color:#F7F7F7;">Get Started</nuxt-link></div>
-    <div class="header-item"><nuxt-link to="/whyotdd" style="color:#F7F7F7;">How OTDD Works</nuxt-link></div>
+    <div class="header-item"><nuxt-link to="/howotddworks" style="color:#F7F7F7;">How OTDD Works</nuxt-link></div>
     <div class="header-item"><nuxt-link to="/whyotdd" style="color:#F7F7F7;">Why OTDD</nuxt-link></div>
     <div style="clear:both"></div>
   </div>

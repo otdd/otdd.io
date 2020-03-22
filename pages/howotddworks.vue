@@ -31,10 +31,12 @@
       <div style="font-size:24px;padding:10px 0px;">By Using Time Gap</div>
       <div style="font-size:16px;padding:10px 0px;">This method manages to arrange the inbound requests so that they get processed one bye one "serially", with a time gap between them. So within the time gap, the inbound req/resp and outbound reqs/resps are naturally grouped. It is the method OTDD choose to use.</div>
       <div style="font-size:16px;padding:10px 0px;">Here is how OTDD works:</div>
+       <img width=1000 src="~/assets/howotddworks.png" style="margin:10px;">
       <div style="font-size:16px;padding:10px 0px;">When OTDD is applied, two pods are created: the redirector and recorder. The redirector just looks like another normal pod that receive its requests from upstreams, while the recorder will receive no requests except only from the redirector. The redirector redirect the request at an interval, say 1 second, to the recorder, the recorder then groups the inbound req/resp and the outbound reqs/resps using the time gap.</div>
+       <img width=1000 src="~/assets/howotddworks_2.png" style="margin:10px;">
       <div style="font-size:16px;padding:10px 0px;">This method has the following main advantages:</div>
       <ul style="font-size:14px;padding:10px 20px;">
-         <li>This method applys to most scenarios that most microservice fit in this modal.</li>
+         <li>This method applys to most scenarios that most microservice fit in this model.</li>
          <li>Recording happends at the tcp layer, no need for the application layer to do anything.</li>
          <li>With the help of kubernetes and istio, it makes the deployment very easy with only one command.</li>
       </ul>
